@@ -1,7 +1,7 @@
 #Flaskとrender_template（HTMLを表示させるための関数）をインポート
 from flask import Flask, render_template, request
-from app.models.model import Request
-from models.database import db_session
+from .models.model import Request
+from .models.database import db_session
 from datetime import datetime
 
 #Flaskオブジェクトの生成
