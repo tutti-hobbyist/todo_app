@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request
 import sys
 sys.path.append("../models")
-from models.model import Request
+from app.models.model import Request
 
 #Flaskオブジェクトの生成
 app = Flask(__name__)
