@@ -11,6 +11,7 @@ class Request(Base):
     date = Column(DateTime, default=datetime.now())
 
     def __init__(self, title=None, body=None, date=None):
+        self.id = id
         self.title = title
         self.body = body
         self.date = date
