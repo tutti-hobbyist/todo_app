@@ -6,15 +6,18 @@ app = Flask(__name__)
 
 #「/」へアクセスがあった場合に、"Hello World"の文字列を返す
 @app.route("/")
-# def hello():
-#     return "Hello World"
 
 #「/index」へアクセスがあった場合に、「index.html」を返す
 @app.route("/index")
 def index():
     name = request.args.get("name")
-    okyo = ["色不異空","空不異色","色即是空","空即是色"]
-    return render_template("index.html",name=name,okyo=okyo)
+    return render_template("index.html",name=name)
+
+# POSTリクエストを受け取る機構
+@app.route("/index",methods=["post"])
+def post():
+    name = request.form["name"]
+    return render_template("index.html", name=name)
 
 #おまじない
 if __name__ == "__main__":
