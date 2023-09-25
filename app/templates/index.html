@@ -10,5 +10,8 @@
         <input type="text" name="name" placeholder="Enter name">
         <input type="submit" value="Submit">
     </form>
+    {% for onegai in all_onegai %}
+    <p>{{onegai.title}}：{{onegai.body}}（{{onegai.date}}）</p>
+    {% endfor %}
     </body>
 </html>
