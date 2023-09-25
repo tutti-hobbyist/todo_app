@@ -1,7 +1,7 @@
 #Flaskとrender_template（HTMLを表示させるための関数）をインポート
 from flask import Flask, render_template, request
 from app.models.model import Request
-from models.database import db_session
+from app.models.database import db_session
 from datetime import datetime
 
 #Flaskオブジェクトの生成
@@ -40,6 +40,16 @@ def update():
     content = Request.query.filter_by(id=request.form["update"]).first()
     content.title = request.form["title"]
     content.body = request.form["body"]
+    db_session.commit()
+    return index()
+
+# DELETE処理
+@app.route("/delete",methods=["post"])
+def delete():
+    id_list = request.form.getlist("delete")
+    for id in id_list:
+        content = Request.query.filter_by(id=id).first()
+        db_session.delete(content)
     db_session.commit()
     return index()
 
