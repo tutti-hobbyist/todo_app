@@ -5,3 +5,6 @@
 
 ## 開発者
 - Tutti, YSampei
+
+## 工数
+- 3 hours
