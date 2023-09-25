@@ -43,6 +43,16 @@ def update():
     db_session.commit()
     return index()
 
+# DELETE処理
+@app.route("/delete",methods=["post"])
+def delete():
+    id_list = request.form.getlist("delete")
+    for id in id_list:
+        content = Request.query.filter_by(id=id).first()
+        db_session.delete(content)
+    db_session.commit()
+    return index()
+
 #おまじない
 if __name__ == "__main__":
     app.run(debug=True)
