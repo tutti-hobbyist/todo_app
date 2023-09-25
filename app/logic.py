@@ -1,7 +1,5 @@
 #Flaskとrender_template（HTMLを表示させるための関数）をインポート
 from flask import Flask, render_template, request
-import sys
-sys.path.append("../models")
 from app.models.model import Request
 
 #Flaskオブジェクトの生成
