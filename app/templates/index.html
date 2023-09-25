@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>{{name}}</title>
     </head>
     <body>
-    <h1>Webアプリ初心者のFlaskチュートリアル</h1>
+    <h1>腐食研究の貴公子</h1>
+    <img src="/static/images/Izumi_muto.jpg" alt="武藤泉">
+    {% for word in okyo %}
+    <p>{{word}}</p>
+    {% endfor %}
     </body>
 </html>
