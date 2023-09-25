@@ -6,8 +6,9 @@
     <body>
     <h1>腐食研究の貴公子</h1>
     <img src="/static/images/Izumi_muto.jpg" alt="武藤泉">
-    {% for word in okyo %}
-    <p>{{word}}</p>
-    {% endfor %}
+    <form action="/index" method="POST">
+        <input type="text" name="name" placeholder="Enter name">
+        <input type="submit" value="Submit">
+    </form>
     </body>
 </html>
