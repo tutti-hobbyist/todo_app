@@ -4,14 +4,39 @@
         <title>腐食研究の貴公子</title>
     </head>
     <body>
-    <h1>{{name}}</h1>
-    <img src="/static/images/Izumi_muto.jpg" alt="武藤泉">
-    <form action="/index" method="POST">
-        <input type="text" name="name" placeholder="Enter name">
-        <input type="submit" value="Submit">
+
+    <p>test</p>
+    
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="body" placeholder="body">
+        <input type="submit" value="Add">
     </form>
+<<<<<<< HEAD
     {% for onegai in all_onegai %}
     <p>{{onegai.title}}：{{onegai.body}}（{{onegai.date}}）</p>
     {% endfor %}
+=======
+
+    <form action="/update" method="post" id="update">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="body" placeholder="body">
+        <input type="submit" value="Update">
+    </form>
+
+    <form action="/delete" method="post" id="delete">
+        <input type="submit" value="Delete Selected All Onegai">
+    </form>
+        {% for request in requests %}
+        <div>
+            <input type="radio" name="update" form="update" value={{request.id}}>
+            <input type="checkbox" name="delete" form="delete" value={{request.id}}>
+            {{request.title}}：{{request.body}}（{{request.date}}）
+        </div>
+        {% endfor %}
+
+
+
+>>>>>>> 21fef878025535a36d6e6c2b22db22ea14315341
     </body>
 </html>
